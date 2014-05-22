@@ -11,6 +11,9 @@ var myPpt = function(req, res){
   res.render('myppt', { title: 'My Presentation' })
 };
 
+var revealNodePpt = function(req, res){
+    res.render('revealnodeppt', { title: 'Reveal Node.js Presentation' })
+};
 
 var controllerRoute = function(req, res){
   res.render('controller', { title: 'Remote Presentation Controller', layout: "controller_layout" })
@@ -26,6 +29,8 @@ exports.setupRemotePresenter = function(app, io, config){
 	// my presentation
 	// url is matching the id for presentations
 	app.get('/myppt', myPpt);
+
+    app.get('/revealnodeppt', revealNodePpt);
 	
 	
 	app.get('/controller', controllerRoute);
