@@ -6,13 +6,96 @@
 	<!-- Any section element inside of this container is displayed as a slide -->
 	<div class="slides">
 		<section>
-			<h1>Reveal.js</h1>
-			<h3 class="inverted">CSS 3D Presentations</h3>
+			<h1>Reveal Node.js</h1>
+			<h3 class="inverted">A quick tour, but reveal :)</h3>
 			<script>
 				// Delicously hacky. Look away.
 				if( navigator.userAgent.match( /(iPhone|iPad|iPod|Android)/i ) ) document.write( '<p style="color: rgba(0,0,0,0.3); text-shadow: none;">('+'Tap to navigate'+')</p>' );
 			</script>
 		</section>
+
+        <section>
+            <h2>Node.js</h2>
+            <ul>
+                <li>Created by Ryan Dahl in 2009</li>
+                <li>Written in C</li>
+                <li>Google’s V8 JavaScript engine (no DOM) (Tao: More on this)</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Philosophy</h2>
+            <ul>
+                <li>Non-blocking I/O</li>
+                <li>Evented</li>
+            </ul>
+        </section>
+
+        <section>
+            <section>
+                <h2>Non-blocking I/O</h2>
+            </section>
+            <section>
+                <h3>Blocking I/O</h3>
+                <pre><code contenteditable>
+var a = db.query('SELECT A');
+console.log('result a:', a);
+
+var b = db.query('SELECT B');
+console.log('result b:', b);
+
+        Time = SUM(A, B)
+                    </code></pre>
+            </section>
+            <section>
+                <h3>Non-Blocking I/O</h3>
+                <pre><code contenteditable>
+db.query('SELECT A', function(result) {
+    console.log('result a:', result);
+});
+
+db.query('SELECT B', function(result) {
+    console.log('result b:', result);
+});
+
+        Time = MAX(A, B)
+                    </code></pre>
+            </section>
+            <section>
+                <h2>Basement Level 2</h2>
+                <p>Cornify</p>
+                <a class="test" href="http://cornify.com">
+                    <img width="280" height="326" src="https://s3.amazonaws.com/hakim-static/reveal-js/cornify.gif">
+                </a>
+            </section>
+            <section>
+                <h2>Basement Level 3</h2>
+                <p>That's it, time to go back up.</p>
+                <a href="#/2" class="image">
+                    <img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" style="-webkit-transform: rotate(180deg);">
+                </a>
+            </section>
+        </section>
+
+        <section>
+            <h2>Module</h2>
+            <ul>
+                <li>Created by Ryan Dahl</li>
+                <li>Written in C</li>
+                <li>Google’s V8 JavaScript engine (no DOM) (Tao: More on this)</li>
+                <li>Or here</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Event Emitter</h2>
+            <ul>
+                <li>Created by Ryan Dahl</li>
+                <li>Written in C</li>
+                <li>Google’s V8 JavaScript engine (no DOM) (Tao: More on this)</li>
+                <li>Or here</li>
+            </ul>
+        </section>
 		
 		<section>
 			<h2>Heads Up</h2>
@@ -227,7 +310,7 @@ node.className += ' roll';
 	</aside>
 
 	<!-- Displays presentation progress, max value changes via JS to reflect # of slides -->
-	<div class="progress"><span></span></div>
+	<div class="progress" style="background: green"><span></span></div>
 	
 </div>
 
