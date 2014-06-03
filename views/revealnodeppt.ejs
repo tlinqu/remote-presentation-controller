@@ -61,31 +61,81 @@ db.query('SELECT B', function(result) {
         Time = MAX(A, B)
                     </code></pre>
             </section>
-            <section>
-                <h2>Basement Level 2</h2>
-                <p>Cornify</p>
-                <a class="test" href="http://cornify.com">
-                    <img width="280" height="326" src="https://s3.amazonaws.com/hakim-static/reveal-js/cornify.gif">
-                </a>
-            </section>
-            <section>
-                <h2>Basement Level 3</h2>
-                <p>That's it, time to go back up.</p>
-                <a href="#/2" class="image">
-                    <img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" style="-webkit-transform: rotate(180deg);">
-                </a>
-            </section>
         </section>
 
         <section>
-            <h2>Module</h2>
+            <h2>CommonJS Modules</h2>
+            <pre><code contenteditable>
+            $ cat hello.js
+                exports.world = function() {
+                return 'Hello World';
+            };
+
+            $ cat main.js
+            var hello = require('./hello');
+            console.log(hello.world());
+
+            $ node main.js
+            Hello World
+                </code></pre>
+
+            <aside class="notes">
+                Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
+            </aside>
+        </section>
+
+        <section>
+            <h2>Http Server</h2>
+            <pre><code contenteditable>
+                    $ cat http.js
+                    var http = require('http');
+                    http.createServer(function(req, res) {
+                        setTimeout(function() {
+                            res.writeHead(200);
+                            res.end('Thanks for waiting!');
+                        }, 1000);
+                    }).listen(4000);
+
+                    $ node http.js
+
+                    $ curl localhost:4000
+                    # 1 sec delay
+                    Thanks for waiting!
+                </code></pre>
+
+            <aside class="notes">
+                http module
+            </aside>
+        </section>
+
+        <section>
+            <h2>Suitable Applications</h2>
             <ul>
-                <li>Created by Ryan Dahl</li>
-                <li>Written in C</li>
-                <li>Google’s V8 JavaScript engine (no DOM) (Tao: More on this)</li>
-                <li>Or here</li>
+                <li>Singe-page apps</li>
+                <li>Real time</li>
+                <li>Crawlers</li>
+                <li>Async chaining of unix tools</li>
+                <li>Streaming</li>
+                <li>File uploading</li>
             </ul>
         </section>
+
+        <section>
+            <h2>Web Frameworks</h2>
+            <ul>
+                <li>Express.js (Sinatra clone)</li>
+                <li>Fab.js (Mind-bending & awesome)</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>WebSockets</h2>
+            <ul>
+                <li>Socket.IO</li>
+            </ul>
+        </section>
+
+
 
         <section>
             <h2>Event Emitter</h2>
